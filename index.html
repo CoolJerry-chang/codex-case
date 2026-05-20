@@ -169,6 +169,23 @@ body {
   transition: border-color 150ms ease;
 }
 .search-box:focus { border-color: var(--secondary); }
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 18px;
+  background: var(--secondary);
+  color: var(--bg);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 150ms ease;
+  white-space: nowrap;
+}
+.download-btn:hover { opacity: 0.85; }
 .search-box::placeholder { color: var(--text-primary); }
 
 /* View toggle */
@@ -555,6 +572,10 @@ td .prompt-block {
 <div class="container">
   <div class="controls">
     <input type="text" class="search-box" id="searchBox" data-zh-placeholder="搜尋案例名稱、描述、標籤..." data-en-placeholder="Search by name, description, tag..." placeholder="搜尋案例名稱、描述、標籤...">
+    <a href="output/codex-use-cases.xlsx" download class="download-btn" data-zh="下載 Excel" data-en="Download Excel">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="vertical-align: -2px; margin-right: 4px;">
+        <path d="M8 1v9m0 0L5 7m3 3l3-3M2 12v1a2 2 0 002 2h8a2 2 0 002-2v-1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>下載 Excel</a>
     <div class="view-toggle">
       <button class="view-btn active" onclick="setView('card')" data-zh="卡片" data-en="Cards">卡片</button>
       <button class="view-btn" onclick="setView('table')" data-zh="表格" data-en="Table">表格</button>
